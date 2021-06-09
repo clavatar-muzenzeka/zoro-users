@@ -42,4 +42,4 @@ function _initApp(express) {
 }
 
 // export module
-module.export = this._initApp(express);
+module.export = _initApp(express);
