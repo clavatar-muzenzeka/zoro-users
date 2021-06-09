@@ -15,18 +15,26 @@ var debug = require("debug")(subApplicationName); // flavoured console.log()
 
 const onConnection = (err) => {
   // throw exception on database connection failed
-
   if (err) {
     let errorMessage = `Error on database connection from ${subApplicationName}`;
     debug(errorMessage);
     throw errorMessage;
   }
+
+  // connected
+  let successMessage = `Mongoose connected from ${subApplicationName}`;
+  debug(successMessage);
 };
 
 // create mongoose connection if not exists
 if (!mongoose.connection.readyState) {
   if (process.env.DB_HOST) mongoose.connect(process.env.DB_HOST, onConnection);
+} else {
 }
+
+// connection exists
+let successMessage = `Mongoose connection got from ${subApplicationName}`;
+debug(successMessage);
 
 /**
  * init app
