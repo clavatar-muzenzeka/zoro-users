@@ -48,8 +48,5 @@ function _initApp(express) {
   return app;
 }
 
-let app = _initApp(express);
-console.log("app ", app);
-
 // export module
-module.exports = app;
+module.exports = _initApp(express);
