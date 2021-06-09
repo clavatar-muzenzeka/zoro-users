@@ -35,7 +35,7 @@ if (!mongoose.connection.readyState) {
  */
 function _initApp(express) {
   const app = express();
-  app.use("*", (req, res, next) => {
+  app.get("*", (req, res, next) => {
     res.end(`${subApplicationName} works`);
   });
   return express;
