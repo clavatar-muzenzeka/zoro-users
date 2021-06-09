@@ -45,7 +45,7 @@ function _initApp(express) {
   app.get("*", (req, res, next) => {
     res.end(`${subApplicationName} works`);
   });
-  return express;
+  return app;
 }
 
 // export module
