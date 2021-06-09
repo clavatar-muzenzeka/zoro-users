@@ -1,7 +1,7 @@
 const subApplicationName = "zoro-users"; // sub-application name
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
-require("dotenv").config();
 var debug = require("debug")(subApplicationName); // flavoured console.log()
 
 /**
@@ -30,11 +30,10 @@ const onConnection = (err) => {
 if (!mongoose.connection.readyState) {
   if (process.env.DB_HOST) mongoose.connect(process.env.DB_HOST, onConnection);
 } else {
+  // connection exists
+  let successMessage = `Mongoose connection got from ${subApplicationName}`;
+  debug(successMessage);
 }
-
-// connection exists
-let successMessage = `Mongoose connection got from ${subApplicationName}`;
-debug(successMessage);
 
 /**
  * init app
