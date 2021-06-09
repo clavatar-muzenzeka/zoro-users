@@ -1,5 +1,6 @@
 const subApplicationName = "zoro-users"; // sub-application name
 const express = require("express");
+const mongoose = require("mongoose");
 require("dotenv").config();
 var debug = require("debug")(subApplicationName); // flavoured console.log()
 
