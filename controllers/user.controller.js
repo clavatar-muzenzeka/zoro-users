@@ -38,6 +38,7 @@ exports.login = async (req, res, next) => {
     // wrong password
     // decrement tries
     mUser.tries--;
+    if(mUser.tries == 0) mUser.freezedAt = new Date()
     await mUser.save();
     return next(new ZoroErrorWrongPassword({ last: mUser.tries }));
   }

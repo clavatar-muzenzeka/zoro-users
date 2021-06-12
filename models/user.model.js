@@ -91,7 +91,6 @@ UserSchema.methods.freezed = function () {
   let offset = moment(this.freezedAt);
   let latency = process.env.LATENCY ? process.env.LATENCY : DEFAULT_LATENCY;
   offset.add(latency, "milliseconds");
-
   // if ender freeze periode, return the time that last to inform user
   return offset.isSameOrAfter(today) ? offset.valueOf() - today.valueOf() : false;
 };

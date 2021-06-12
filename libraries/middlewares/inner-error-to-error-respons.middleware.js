@@ -45,8 +45,6 @@ const errorHandler = (err, req, res, next) => {
       else error = new ZoroErrorUnknown({});
     }
   }
-
-  console.log(error)
   next(error);
 };
 
