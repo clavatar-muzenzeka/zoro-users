@@ -51,6 +51,8 @@ function _initApp(express) {
    */
   var logger = require("morgan");
   app.use(logger("dev"));
+  const cors = require("cors");
+  app.use(cors({ origin: "*" }));
   app.use(express.json());
   app.use(express.urlencoded({ extended: false }));
   /**

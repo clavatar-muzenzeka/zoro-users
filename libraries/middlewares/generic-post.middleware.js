@@ -16,7 +16,6 @@ module.exports = (model, contextName) => async (req, res, next) => {
     // send error to error handler
     if (err) next(err);
     // send response
-    else return res.status(201).json(new GenericReponse(document, {  
-    }));
+    else return res.status(201).json(new GenericReponse(document, {}));
   });
 };
